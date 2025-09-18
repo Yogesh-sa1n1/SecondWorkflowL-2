@@ -1,7 +1,7 @@
-name : workflow_patch manual trigger
+name : workflow_dispatch manual trigger
 
 on:
-  workflow_patch:
+  workflow_dispatch:
     inputs:
       envrionment:
         description: "which evn to deploy to?"
