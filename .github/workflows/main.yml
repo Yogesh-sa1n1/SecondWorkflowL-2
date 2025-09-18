@@ -1,0 +1,23 @@
+name : workflow_patch manual trigger
+
+on:
+  workflow_patch:
+    inputs:
+      envrionment:
+        description: "which evn to deploy to?"
+        required: true
+        default: "staging"
+      version:
+        description: "app version deploy"
+        required: false
+
+jobs:
+  manual_trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show inputs
+        run: |
+          echo "Deploy to : ${{github.event.inputs.envrionment}}"
+          echo "Version : ${{github.event.inputs.version}}"
+
